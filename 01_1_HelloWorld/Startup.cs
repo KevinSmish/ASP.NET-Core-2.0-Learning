@@ -27,7 +27,8 @@ namespace _01_1_HelloWorld
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                context.Response.ContentType = "text/html; charset=utf-8";
+                await context.Response.WriteAsync("Привет мир!");
             });
         }
     }
