@@ -1,0 +1,19 @@
+﻿@page "{id:int}"
+@model RAZOR_CRUD.Pages.EditModel
+
+<h2>Edit Costomer - @Model.Customer.Id</h2>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Customer.Id" type="hidden" />
+    <div>
+        <label asp-for="Customer.Name" />
+        <div>
+            <input asp-for="Customer.Name" />
+            <span asp-validation-for="Customer.Name" />
+        </div>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>

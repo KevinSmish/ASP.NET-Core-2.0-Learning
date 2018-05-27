@@ -1,0 +1,10 @@
+﻿@page
+@model RAZOR_CRUD.Pages.CreateModel
+
+<p>Enter your name:</p>
+<div asp-validation-summary="All"></div>
+
+<form method="post">
+    <div>Name: <input asp-for="Customer.Name" /> </div>
+    <input type="submit" />
+</form>
