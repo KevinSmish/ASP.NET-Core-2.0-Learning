@@ -11,6 +11,7 @@
 </head>
 <body>
     <form asp-action="RsvpForm" method="post">
+        <div asp-validation-summary="All"></div>
         <p>
             <label asp-for="Name">Your name:</label>
             <input asp-for="Name" />
