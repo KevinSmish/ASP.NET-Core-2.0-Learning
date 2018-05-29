@@ -17,5 +17,10 @@ namespace Ch02_PartyInvites.Controllers
 
             return View("MyView");
         }
+
+        public ViewResult RsvpForm()
+        {
+            return View();
+        }
     }
 }
