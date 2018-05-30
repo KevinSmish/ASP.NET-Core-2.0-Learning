@@ -58,9 +58,27 @@ namespace _04_4_Use
         public void Configure(IApplicationBuilder app)
         {
             int x = 2;
-
+            /*
             app.Map("/index", Index);
             app.Map("/about", About);
+            */
+
+            // Метод Map может иметь вложенные методы Map, которые обрабатывают подмаршруты. 
+            app.Map("/home", home =>
+            {
+                home.Map("/index", Index);
+                home.Map("/about", About);
+            });
+
+            // Похожим образом работает метод MapWhen(). Он принимает в качестве параметра 
+            // делегат Func<HttpContext, bool> и обрабатывает запрос, если функция, 
+            // передаваемая в качестве параметра возвращает true.
+
+            app.MapWhen(context => {
+
+                return context.Request.Query.ContainsKey("id") &&
+                        context.Request.Query["id"] == "5";
+            }, HandleId);
 
             app.Use(async (context, next) =>
             {
@@ -96,5 +114,21 @@ namespace _04_4_Use
                 await context.Response.WriteAsync("About");
             });
         }
+
+        // В данном случае если в запросе указан параметр id и он имеет значение 5, то запрос 
+        // обрабатывается функцией HandleId(). К подобным запросам будут относиться, например, 
+        // запрос http://localhost:55234/?id=5 или 
+        // http://localhost:55234/product?id=5&name=phone, так как обе строки запроса содержат 
+        // параметр id равный 5. А все остальные запросы также будут обрабатываться делегатом, 
+        // передаваемым в метод app.Run().
+
+        private static void HandleId(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("id is equal to 5");
+            });
+        }
+
     }
 }
