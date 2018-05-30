@@ -59,6 +59,9 @@ namespace _04_4_Use
         {
             int x = 2;
 
+            app.Map("/index", Index);
+            app.Map("/about", About);
+
             app.Use(async (context, next) =>
             {
                 await context.Response.WriteAsync("<p>Hello world!</p>");
@@ -75,6 +78,22 @@ namespace _04_4_Use
 
                 x = x * 2;  //  4 * 2 = 8
                 await Task.FromResult(0);
+            });
+        }
+
+        private static void Index(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Index");
+            });
+        }
+
+        private static void About(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("About");
             });
         }
     }
