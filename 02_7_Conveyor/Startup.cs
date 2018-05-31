@@ -20,13 +20,17 @@ namespace _02_7_Conveyor
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            string name = env.ApplicationName;
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMiddleware<ErrorHandlingMiddleware>();
-            app.UseMiddleware<AuthenticationMiddleware>();
+            app.UseMiddleware<ErrorHandlingMiddleware>(name);
+            app.UseToken(); 
+            //app.UseMiddleware<AuthenticationMiddleware>();
             app.UseMiddleware<RoutingMiddleware>();
 
             app.Run(async (context) =>
