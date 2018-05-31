@@ -15,6 +15,7 @@ namespace _02_7_Conveyor
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDirectoryBrowser();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,7 +29,13 @@ namespace _02_7_Conveyor
                 app.UseDeveloperExceptionPage();
             }
 
+            /*
+            app.UseDefaultFiles(); // при отправке запроса типа http://localhost/ приложение будет искать 
+            // в папке wwwroot следующие файлы: default.htm, default.html, index.htm, index.html
+            */
+
             app.UseStaticFiles();
+            app.UseDirectoryBrowser();
 
             app.UseMiddleware<ErrorHandlingMiddleware>(name);
             app.UseToken(); 
