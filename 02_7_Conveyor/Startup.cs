@@ -28,6 +28,8 @@ namespace _02_7_Conveyor
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseMiddleware<ErrorHandlingMiddleware>(name);
             app.UseToken(); 
             //app.UseMiddleware<AuthenticationMiddleware>();

@@ -20,11 +20,15 @@ namespace _02_7_Conveyor
         {
             string path = context.Request.Path.Value.ToLower();
 
+            /*
             if (path == "/index")
             {
                 await context.Response.WriteAsync("Home Page");
             }
-            else if (path == "/about")
+            else 
+            */
+
+            if (path == "/about")
             {
                 await context.Response.WriteAsync("About");
             }
