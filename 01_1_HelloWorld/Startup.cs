@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,7 @@ namespace _01_1_HelloWorld
 {
     public class Startup
     {
+        private IServiceCollection _services;
 
         // При запуске приложения сначала срабатывает конструктор, 
         // затем метод ConfigureServices() и в конце метод Configure(). 
@@ -47,6 +49,8 @@ namespace _01_1_HelloWorld
             // После добавления в коллекцию сервисов добавленные севисы становятся 
             // доступными для приложения.
             services.AddMvc();
+
+            _services = services; // сохраним коллекцию сервисов
         }
 
         
@@ -86,6 +90,23 @@ namespace _01_1_HelloWorld
                 // await context.Response.WriteAsync("Привет мир!");
 
                 await context.Response.WriteAsync(_env.ApplicationName);
+
+                // Выведем список сервисов
+                var sb = new StringBuilder();
+                sb.Append("<h1>Все сервисы</h1>");
+                sb.Append("<table>");
+                sb.Append("<tr><th>Тип</th><th>Lifetime</th><th>Реализация</th></tr>");
+                foreach (var svc in _services)
+                {
+                    sb.Append("<tr>");
+                    sb.Append($"<td>{svc.ServiceType.FullName}</td>");
+                    sb.Append($"<td>{svc.Lifetime}</td>");
+                    sb.Append($"<td>{svc.ImplementationType?.FullName}</td>");
+                    sb.Append("</tr>");
+                }
+                sb.Append("</table>");
+                context.Response.ContentType = "text/html;charset=utf-8";
+                await context.Response.WriteAsync(sb.ToString());
             });
         }
     }
