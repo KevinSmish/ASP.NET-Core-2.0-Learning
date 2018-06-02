@@ -91,6 +91,7 @@ namespace _02_13_HttpContext
 
             // ******************************************************
             // Вариант 3 Session
+            /*
             app.UseSession();
             app.Run(async (context) =>
             {
@@ -102,6 +103,26 @@ namespace _02_13_HttpContext
                     await context.Response.WriteAsync("Hello World!");
                 }
             });
+            */
+
+            // ******************************************************
+            // Вариант 4 Session with JSON
+            app.UseSession();
+            app.Run(async (context) =>
+            {
+                if (context.Session.Keys.Contains("person"))
+                {
+                    Person person = context.Session.Get<Person>("person");
+                    await context.Response.WriteAsync($"Hello {person.Name}!");
+                }
+                else
+                {
+                    Person person = new Person { Name = "Tom", Age = 22 };
+                    context.Session.Set<Person>("person", person);
+                    await context.Response.WriteAsync("Hello World!");
+                }
+            });
+
 
             /*
                 Объект Session определяет ряд свойств и методов, которые мы можем использовать:
