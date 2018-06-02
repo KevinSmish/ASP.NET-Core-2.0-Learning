@@ -89,7 +89,7 @@ namespace _01_1_HelloWorld
                 // отправка ответа в виде строки "Привет, мир!"
                 // await context.Response.WriteAsync("Привет мир!");
 
-                await context.Response.WriteAsync(_env.ApplicationName);
+                //await context.Response.WriteAsync(_env.ApplicationName);
 
                 // Выведем список сервисов
                 var sb = new StringBuilder();
