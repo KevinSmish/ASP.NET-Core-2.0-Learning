@@ -8,6 +8,7 @@ namespace AdamFreeman_Ch04_Essential_CSharp_Features.Controllers
     {
         public ViewResult Index()
         {
+            /*
             List<string> results = new List<string>();
             foreach (Product p in Product.GetProducts())
             {
@@ -22,14 +23,26 @@ namespace AdamFreeman_Ch04_Essential_CSharp_Features.Controllers
                 // New style working with a string
                 //results.Add($"Name: {name}, Price: {price}, Related: {relatedName}");
 
-                Dictionary<string, Product> products = new Dictionary<string, Product> {
+                Dictionary<string, Product> products = new Dictionary<string, Product>
+                {
                     ["Kayak"] = new Product { Name = "Kayak", Price = 275M },
                     ["Lifejacket"] = new Product { Name = "Lifejacket", Price = 48.95M }
                 };
                 return View("Index", products.Keys);
-
             }
-            return View(results);
+            */
+
+            ShoppingCart cart = new ShoppingCart { Products = Product.GetProducts() };
+            Product[] productArray = {
+                new Product {Name = "Kayak", Price = 275M},
+                new Product {Name = "Lifejacket", Price = 48.95M}
+            };
+
+            decimal cartTotal = cart.TotalPrices();
+            decimal arrayTotal = productArray.TotalPrices();
+            return View("Index", new string[] {
+                $"Cart Total: {cartTotal:C2}",
+                $"Array Total: {arrayTotal:C2}" });
         }
     }
 }
