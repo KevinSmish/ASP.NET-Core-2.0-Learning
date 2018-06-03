@@ -81,9 +81,26 @@ namespace AdamFreeman_Ch04_Essential_CSharp_Features.Controllers
 
             //return View(Product.GetProducts().Select(p => p?.Name));
         }
-        */        
+        */
 
+        /*
         public ViewResult Index() =>
             View(Product.GetProducts().Select(p => p?.Name));
+        */
+
+        public ViewResult Index()
+        {
+            var products = new[] {
+                new { Name = "Kayak", Price = 275M },
+                new { Name = "Lifejacket", Price = 48.95M },
+                new { Name = "Soccer ball", Price = 19.50M },
+                new { Name = "Corner flag", Price = 34.95M }
+            };
+
+            // 7. Comment 
+            //return View(products.Select(p => p.Name));
+
+            return View(products.Select(p => $"Name: {p.Name}, Price: {p.Price}"));
+        }
     }
 }
