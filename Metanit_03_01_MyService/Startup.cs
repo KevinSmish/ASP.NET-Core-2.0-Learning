@@ -37,10 +37,12 @@ namespace Metanit_03_01_MyService
 
             app.Run(async (context) =>
             {
-                // Old position
-                //await context.Response.WriteAsync(messageSender.Send());
-
                 context.Response.ContentType = "text/html; charset=utf-8";
+
+                // Old position
+                //IMessageSender messageSender = app.ApplicationServices.GetService<IMessageSender>();
+                //await context.Response.WriteAsync(messageSender.Send());
+                
                 await context.Response.WriteAsync($"Текущее время: {timeService?.GetTime()}");
             });
         }
