@@ -23,10 +23,12 @@ namespace Metanit_03_01_MyService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IMessageSender, EmailMessageSender>();
+            services.AddTransient<TimeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMessageSender messageSender)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env//, IMessageSender messageSender)
+                                                                                , TimeService timeService)
         {
             if (env.IsDevelopment())
             {
@@ -35,7 +37,11 @@ namespace Metanit_03_01_MyService
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync(messageSender.Send());
+                // Old position
+                //await context.Response.WriteAsync(messageSender.Send());
+
+                context.Response.ContentType = "text/html; charset=utf-8";
+                await context.Response.WriteAsync($"Текущее время: {timeService?.GetTime()}");
             });
         }
     }
