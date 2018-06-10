@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AdamFreeman_Ch06_Working_with_VisualStudio.Models
 {
-    public class SimpleRepository
+    public class SimpleRepository :IRepository 
     {
         private static SimpleRepository sharedRepository = new SimpleRepository();
 
