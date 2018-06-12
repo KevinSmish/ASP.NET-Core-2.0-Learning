@@ -20,6 +20,8 @@ namespace AdamFreeman_Ch08_SportsStore
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseDefaultServiceProvider(options =>
+                    options.ValidateScopes = false)
                 .Build();
     }
 }
