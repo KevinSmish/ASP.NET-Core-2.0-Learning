@@ -28,8 +28,8 @@ namespace Metanit_04_01_IConfiguration
             var builder = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string>
                 {
-                    {"firstname", "Tom"},
-                    {"age", "31"}
+                    {"color", "blue"},
+                    {"text", "Hello ASP.NET 5"}
                 });
             // создаем конфигурацию
             AppConfiguration = builder.Build();
@@ -49,12 +49,14 @@ namespace Metanit_04_01_IConfiguration
                 app.UseDeveloperExceptionPage();
             }
 
-            AppConfiguration["firstname"] = "alice";
-            AppConfiguration["lastname"] = "simpson";
+            AppConfiguration["text"] = "Hello ASP.NET Core 2.1";
+
+            var color = AppConfiguration["color"];
+            var text = AppConfiguration["text"];
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync(AppConfiguration["firstname"]);
+                await context.Response.WriteAsync($"<p style='color:{color};'>{text}</p>");
                 //await context.Response.WriteAsync("Hello World!");
             });
         }
