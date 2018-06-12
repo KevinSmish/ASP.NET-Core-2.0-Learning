@@ -2,7 +2,9 @@
 
 // ToDo
 // 1. To add Microsoft.EntityFrameworkCore.SqlServer
+//      Install-Package Microsoft.EntityFrameworkCore.SqlServer
 // 2. To add Microsoft.EntityFrameworkCore.Tools
+//      Install-Package Microsoft.EntityFrameworkCore.Tools
 
 namespace MetanitEF_01_02_FirstApp
 {
