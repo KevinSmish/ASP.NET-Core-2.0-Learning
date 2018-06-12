@@ -22,15 +22,22 @@ namespace Metanit_04_01_IConfiguration
         // свойство, которое будет хранить конфигурацию
         public IConfiguration AppConfiguration { get; set; }
 
-        public Startup()
+        public Startup(IHostingEnvironment env)
         {
             // строитель конфигурации
+            /*
             var builder = new ConfigurationBuilder()
                 .AddInMemoryCollection(new Dictionary<string, string>
                 {
                     {"color", "blue"},
                     {"text", "Hello ASP.NET 5"}
                 });
+            */
+
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath);
+            builder.AddJsonFile("myconfig.json");
+
             // создаем конфигурацию
             AppConfiguration = builder.Build();
         }
@@ -49,10 +56,11 @@ namespace Metanit_04_01_IConfiguration
                 app.UseDeveloperExceptionPage();
             }
 
-            AppConfiguration["text"] = "Hello ASP.NET Core 2.1";
+            //AppConfiguration["text"] = "Hello ASP.NET Core 2.1";
 
             var color = AppConfiguration["color"];
-            var text = AppConfiguration["text"];
+            //var text = AppConfiguration["text"];
+            string text = AppConfiguration["namespace:class:text"];
 
             app.Run(async (context) =>
             {
