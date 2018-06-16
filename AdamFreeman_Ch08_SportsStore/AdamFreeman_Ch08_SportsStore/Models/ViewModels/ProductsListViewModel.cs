@@ -2,9 +2,9 @@
 using AdamFreeman_Ch08_SportsStore.Models;
 using AdamFreeman_Ch08_SportsStore.Models.ViewModels;
 
-namespace AdamFreeman_Ch08_SportsStore.Controllers
+namespace AdamFreeman_Ch08_SportsStore.Models.ViewModels
 {
-    internal class ProductsListViewModel
+    public class ProductsListViewModel
     {
         public IQueryable<Product> Products { get; set; }
         public PagingInfo PagingInfo { get; set; }

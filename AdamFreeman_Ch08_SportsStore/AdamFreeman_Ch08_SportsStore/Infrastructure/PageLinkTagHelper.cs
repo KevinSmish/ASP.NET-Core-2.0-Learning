@@ -56,5 +56,4 @@ namespace AdamFreeman_Ch08_SportsStore.Infrastructure
             output.Content.AppendHtml(result.InnerHtml);
         }
     }
-
 }
