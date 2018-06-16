@@ -15,6 +15,7 @@ namespace AdamFreeman_Ch08_SportsStore.Infrastructure
     public class PageLinkTagHelper: TagHelper 
     {
         private IUrlHelperFactory urlHelperFactory;
+
         public PageLinkTagHelper(IUrlHelperFactory helperFactory)
         {
             urlHelperFactory = helperFactory;
@@ -23,8 +24,11 @@ namespace AdamFreeman_Ch08_SportsStore.Infrastructure
         [ViewContext]
         [HtmlAttributeNotBound]
         public ViewContext ViewContext { get; set; }
+
         public PagingInfo PageModel { get; set; }
+
         public string PageAction { get; set; }
+
         public override void Process(TagHelperContext context,
             TagHelperOutput output)
         {
