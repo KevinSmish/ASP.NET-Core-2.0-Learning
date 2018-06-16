@@ -21,27 +21,31 @@ namespace AdamFreeman_Ch08_SportsStore.Controllers
         //public ViewResult List() => View(repository.Products);
         // http://localhost:62638/?productPage=2
 
-        public ViewResult List(int productPage = 1)
-            => View(repository.Products
+        /*
+            public ViewResult List(int productPage = 1)
+                => View(repository.Products
                 .OrderBy(p => p.ProductID)
                 .Skip((productPage - 1) * PageSize)
                 .Take(PageSize));
-/*
+        */
+
         public ViewResult List(int productPage = 1)
             => View(new ProductsListViewModel
             {
                 Products = repository.Products
-                .OrderBy(p => p.ProductID)
-                .Skip((productPage - 1) * PageSize)
-                .Take(PageSize),
-            PagingInfo = new PagingInfo
-            {
-                CurrentPage = productPage,
-                ItemsPerPage = PageSize,
-                TotalItems = repository.Products.Count()
-            }
-        });
-        */
+                    .OrderBy(p => p.ProductID)
+                    .Skip((productPage - 1) * PageSize)
+                    .Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = productPage,
+                    ItemsPerPage = PageSize,
+                    TotalItems = repository.Products.Count()
+                }
+            });
     }
+
+
+
 }
 

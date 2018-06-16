@@ -20,9 +20,9 @@ namespace SportsStore.Tests
             // Arrange
             var urlHelper = new Mock<IUrlHelper>();
             urlHelper.SetupSequence(x => x.Action(It.IsAny<UrlActionContext>()))
-            .Returns("Test/Page1")
-            .Returns("Test/Page2")
-            .Returns("Test/Page3");
+                .Returns("Test/Page1")
+                .Returns("Test/Page2")
+                .Returns("Test/Page3");
 
             var urlHelperFactory = new Mock<IUrlHelperFactory>();
             urlHelperFactory.Setup(f =>

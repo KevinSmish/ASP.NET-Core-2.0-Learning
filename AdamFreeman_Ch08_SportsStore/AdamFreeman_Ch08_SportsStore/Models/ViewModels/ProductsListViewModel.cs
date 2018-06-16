@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using AdamFreeman_Ch08_SportsStore.Models;
 
 namespace AdamFreeman_Ch08_SportsStore.Models.ViewModels
 {
