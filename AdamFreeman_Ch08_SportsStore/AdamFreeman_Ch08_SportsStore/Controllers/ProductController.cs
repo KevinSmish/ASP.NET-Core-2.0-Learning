@@ -22,6 +22,12 @@ namespace AdamFreeman_Ch08_SportsStore.Controllers
         // http://localhost:62638/?productPage=2
 
         public ViewResult List(int productPage = 1)
+            => View(repository.Products
+                .OrderBy(p => p.ProductID)
+                .Skip((productPage - 1) * PageSize)
+                .Take(PageSize));
+/*
+        public ViewResult List(int productPage = 1)
             => View(new ProductsListViewModel
             {
                 Products = repository.Products
@@ -35,6 +41,7 @@ namespace AdamFreeman_Ch08_SportsStore.Controllers
                 TotalItems = repository.Products.Count()
             }
         });
+        */
     }
 }
 
