@@ -75,6 +75,7 @@ namespace Metanit_05_03_WorkingWithRouters
             });
         }
 
+        // http://localhost:51320/action/lumia-2015
         private async Task Handle(HttpContext context)
         {
             var routeValues = context.GetRouteData().Values;
