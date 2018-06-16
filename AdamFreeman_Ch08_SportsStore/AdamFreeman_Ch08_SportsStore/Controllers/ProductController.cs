@@ -18,6 +18,7 @@ namespace AdamFreeman_Ch08_SportsStore.Controllers
         }
 
         //public ViewResult List() => View(repository.Products);
+        // http://localhost:62638/?productPage=2
 
         public ViewResult List(int productPage = 1)
             => View(repository.Products
