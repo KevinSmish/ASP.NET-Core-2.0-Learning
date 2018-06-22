@@ -1,14 +1,34 @@
 ﻿using Metanit_07_02_ControllerParameter.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Metanit_07_02_ControllerParameter.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IHostingEnvironment _appEnvironment;
+        public HomeController(IHostingEnvironment appEnvironment)
+        {
+            _appEnvironment = appEnvironment;
+        }
+
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            if (context.HttpContext.Request.Headers.ContainsKey("User-Agent") &&
+                Regex.IsMatch(context.HttpContext.Request.Headers["User-Agent"].FirstOrDefault(), "MSIE 8.0"))
+            {
+                context.Result = Content("Internet Explorer 8.0 не поддерживается");
+            }
+            base.OnActionExecuting(context);
+        }
+
         public IActionResult Index()
         {
             Product[] array = {
@@ -91,6 +111,18 @@ namespace Metanit_07_02_ControllerParameter.Controllers
             return Content("Ok");
         }
 
+        // https://localhost:44324/Home/GetFile
+        public IActionResult GetFile()
+        {
+            // Путь к файлу
+            string file_path = Path.Combine(_appEnvironment.ContentRootPath, "Files/TextFile.txt");
+            // Тип файла - content-type
+            //string file_type = "application/txt";
+            string file_type = "application/octet-stream";
+            // Имя файла - необязательно
+            string file_name = "book.txt";
+            return PhysicalFile(file_path, file_type, file_name);
+        }
     }
 
     public class Geometry
