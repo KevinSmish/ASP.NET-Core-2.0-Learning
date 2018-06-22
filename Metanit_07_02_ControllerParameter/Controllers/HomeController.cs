@@ -14,10 +14,13 @@ namespace Metanit_07_02_ControllerParameter.Controllers
 {
     public class HomeController : Controller
     {
+        //private readonly ITimeService _timeService;
+
         private readonly IHostingEnvironment _appEnvironment;
-        public HomeController(IHostingEnvironment appEnvironment)
+        public HomeController(IHostingEnvironment appEnvironment) //, ITimeService timeServ)
         {
             _appEnvironment = appEnvironment;
+            //_timeService = timeServ;
         }
 
         public override void OnActionExecuting(ActionExecutingContext context)
@@ -142,6 +145,14 @@ namespace Metanit_07_02_ControllerParameter.Controllers
             Response.StatusCode = 404;
             Response.WriteAsync("Ресурс не найден");
         }
+
+        // https://localhost:44324/Home/IndexEight
+        public string IndexEight([FromServices] ITimeService timeService)
+        {
+            //return _timeService.Time;
+            return timeService.Time;
+        }
+
     }
 
     public class Geometry
