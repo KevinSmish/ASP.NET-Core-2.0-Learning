@@ -15,6 +15,9 @@
 
 @Html.Partial("_GetMessage")
 
+@inject Metanit_08_02_Razor.Services.IMessageSender MessageSender
+@MessageSender.SendMessage()
+
 @section Footer {
     Все права защищены. Site Corp. 2016.
 }
