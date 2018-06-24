@@ -31,7 +31,17 @@ namespace Metanit_08_02_Razor.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Hello ASP.NET Core";
+            ViewBag.Message1 = "Hello ASP.NET Core (from ViewBag)";
+            ViewBag.Countries = new List<string> { "Бразилия", "Аргентина", "Уругвай", "Чили" };
+
             return View();
+        }
+
+        // https://localhost:44344/home/about1
+        public IActionResult About1()
+        {
+            List<string> countries = new List<string> { "Бразилия", "Аргентина", "Уругвай", "Чили" };
+            return View(countries);
         }
     }
 }

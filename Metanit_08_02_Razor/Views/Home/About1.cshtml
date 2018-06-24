@@ -1,0 +1,11 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>strongly-typed views</h2>
+<h3>В списке @Model.Count элемента</h3>
+@foreach (string country in Model)
+{
+    <p>@country</p>
+}

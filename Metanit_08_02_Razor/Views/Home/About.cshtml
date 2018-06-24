@@ -3,5 +3,13 @@
 }
 <h2>@ViewData["Title"].</h2>
 <h3>@ViewData["Message"]</h3>
+<h3>@ViewBag.Message1</h3>
 
 <p>Use this area to provide additional information.</p>
+
+<h3>В списке @(((List<string>)ViewBag.Countries).Count) элемента:</h3>
+
+@foreach (string country in ViewBag.Countries)
+{
+    <li>@country</li>
+}
