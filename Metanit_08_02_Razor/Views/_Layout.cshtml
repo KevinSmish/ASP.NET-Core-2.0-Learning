@@ -22,7 +22,14 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>© 2015 - MobileStore</p>
+            @if (IsSectionDefined("Footer"))
+            {
+                @RenderSection("Footer")
+            }
+            else
+            {
+                <p>© 2015 - MobileStore</p>
+            }
         </footer>
     </div>
 </body>
