@@ -10,6 +10,11 @@ namespace Metanit_08_08_ViewForms.Controllers
 
     public class HomeController: Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Login()
         {
@@ -17,10 +22,29 @@ namespace Metanit_08_08_ViewForms.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string login, string password)
+        public IActionResult Login(string login, string password, bool isMarried, string color, string phone)
         {
-            string authData = $"Login: {login}   Password: {password}";
+            string authData = $"Login: {login}, Password: {password}, isMarried: {isMarried}, color: {color}, phone: {phone}";
             return Content(authData);
+        }
+
+        [HttpGet]
+        public IActionResult Phones()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Phones(string[] phones)
+        {
+            string result = "";
+            foreach (string p in phones)
+            {
+                result += p;
+                result += ";";
+            }
+            result = "Вы выбрали: " + result;
+            return Content(result);
         }
     }
 }
