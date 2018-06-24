@@ -43,5 +43,10 @@ namespace Metanit_08_02_Razor.Controllers
             List<string> countries = new List<string> { "Бразилия", "Аргентина", "Уругвай", "Чили" };
             return View(countries);
         }
+
+        public ActionResult GetMessage()
+        {
+            return PartialView("_GetMessage");
+        }
     }
 }
