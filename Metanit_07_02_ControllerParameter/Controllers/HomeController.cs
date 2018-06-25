@@ -153,6 +153,14 @@ namespace Metanit_07_02_ControllerParameter.Controllers
             return timeService.Time;
         }
 
+        // https://localhost:44324/Home/SuperIndex
+        public IActionResult SuperIndex()
+        {
+            var controller = RouteData.Values["controller"].ToString();
+            var action = RouteData.Values["action"].ToString();
+            return Content($"controller: {controller} | action: {action}");
+        }
+
     }
 
     public class Geometry
