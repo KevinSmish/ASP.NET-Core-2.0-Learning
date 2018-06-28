@@ -1,0 +1,23 @@
+﻿@{
+}
+
+<li> <a href="/home/about">Вторая страница моего сайта (about)</a> </li>
+
+@* =================================================*@
+@* table and for                                    *@
+<table>
+    <thead>
+        <tr><th>Name</th><th>Price</th></tr>
+    </thead>
+    <tbody>
+        @foreach (Product p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@($"{p.Price:C2}")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<text>=========================================</text>
+
