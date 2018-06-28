@@ -41,6 +41,13 @@ namespace Metanit_09_03_Areas
                     "{controller}/{action}/{id?}",
                     new { controller = "MySweetHome", action = "Index" }
                 );
+
+                // https://localhost:44311/mysweethome/about
+                routes.MapRoute("about",
+                    "{controller}/{action}/{id?}",
+                    new { controller = "MySweetHome", action = "About" }
+                );
+
             });
 
             app.Run(async (context) =>

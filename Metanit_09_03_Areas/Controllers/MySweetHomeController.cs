@@ -20,5 +20,11 @@ namespace Metanit_09_03_Areas.Controllers
             return View(array);
         }
 
+        public IActionResult About()
+        {
+            string contentUrl = Url.Content("~/lib/jquery/dist/jquery.js");
+            string actionUrl = Url.Action("Index", "Home");
+            return Content(actionUrl);
+        }
     }
 }

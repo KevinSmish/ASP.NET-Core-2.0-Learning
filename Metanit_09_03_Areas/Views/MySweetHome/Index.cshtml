@@ -2,6 +2,9 @@
 }
 
 <li> <a href="/home/about">Вторая страница моего сайта (about)</a> </li>
+<li> @Html.ActionLink("Магазин", "Index", new { area = "Store", controller = "Home" }) </li>
+<li> <a asp-action="Index" asp-controller="Home" asp-route-area="Store">Еще одна ссылка на магазин</a> </li>
+
 
 @* =================================================*@
 @* table and for                                    *@
