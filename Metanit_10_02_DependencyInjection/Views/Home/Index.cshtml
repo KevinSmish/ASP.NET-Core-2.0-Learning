@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>@await Component.InvokeAsync("BestPhone")</h2>
+
+<p>@await Component.InvokeAsync("PhonesList", new { maxprice = 55000 })</p>
+<p>@await Component.InvokeAsync("PhonesList", new { maxprice = 60000, minprice = 20000 })</p>
+
