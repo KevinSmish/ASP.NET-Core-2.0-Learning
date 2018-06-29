@@ -1,0 +1,7 @@
+﻿<h3>@ViewData["Header"]</h3>
+<ul>
+    @foreach (var phone in ViewBag.Phones)
+    {
+        <li>Модель: <b>@phone.Key</b>  Цена:@phone.Value</li>
+    }
+</ul>
