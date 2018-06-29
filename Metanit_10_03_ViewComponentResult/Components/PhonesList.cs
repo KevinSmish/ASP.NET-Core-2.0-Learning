@@ -27,8 +27,13 @@ namespace Metanit_10_03_ViewComponentResult.Components
 
         public IViewComponentResult Invoke(int maxPrice)
         {
-            var items = phones.Where(p => p.Value <= maxPrice).ToList();
-            return View(items);
+            // вызываем default.cshtml
+            //var items = phones.Where(p => p.Value <= maxPrice).ToList();
+            //return View(items);
+
+            // вызываем phones.cshtml
+            var items = phones.Where(p => p.Value < maxPrice);
+            return View("Phones", items);
         }
     }
 }
