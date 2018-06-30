@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metanit_11_01_SimpleModel", "Metanit_11_01_SimpleModel\Metanit_11_01_SimpleModel.csproj", "{6B336485-0A11-42B9-8426-30061B56552C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metanit_11_05_ModelBinding", "Metanit_11_05_ModelBinding\Metanit_11_05_ModelBinding.csproj", "{10394720-DFE1-4C9C-9459-375CC7F66374}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B336485-0A11-42B9-8426-30061B56552C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B336485-0A11-42B9-8426-30061B56552C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B336485-0A11-42B9-8426-30061B56552C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B336485-0A11-42B9-8426-30061B56552C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10394720-DFE1-4C9C-9459-375CC7F66374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10394720-DFE1-4C9C-9459-375CC7F66374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10394720-DFE1-4C9C-9459-375CC7F66374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10394720-DFE1-4C9C-9459-375CC7F66374}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3C91CFE-38C0-4E4D-B43E-7160971AA6A9}
+	EndGlobalSection
+EndGlobal
