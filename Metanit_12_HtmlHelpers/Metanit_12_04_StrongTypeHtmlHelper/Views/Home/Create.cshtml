@@ -1,0 +1,71 @@
+﻿@model Metanit_12_04_StrongTypeHtmlHelper.Models.Phone
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(m => m.Name, "Модель")<br />
+        @Html.TextBoxFor(m => m.Name)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Price, "Цена")<br />
+        @Html.TextBoxFor(m => m.Price, "", new { type = "number" })
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+
+    <br />
+    <h3>Html.HiddenFor ----------------</h3>
+    @Html.HiddenFor(m => m.Id)
+    <br />
+    <input id="Id" name="Id" type="hidden" value="[значение_m.Id]" />
+
+    <br />
+    <h3>Html.CheckBoxFor ----------------</h3>
+    @Html.CheckBoxFor(m => m.HasTwoSim, false)
+    <br />
+    <input id="Enable" name="Enable" type="checkbox" value="true" />
+    <input name="Enable" type="hidden" value="false">
+
+    <br />
+    <h3>Html.LabelFor ----------------</h3>
+    @Html.LabelFor(m => m.Name, "Модель")
+    <br />
+    <label for="Name">Модель</label>
+
+    <br />
+    <h3>Html.PasswordFor ----------------</h3>
+    @Html.PasswordFor(m => m.SecretCode)
+    <br />
+    <input id="Password" name="Password" type="password" />
+
+    <br />
+    <h3>Html.RadioButtonFor ----------------</h3>
+    @Html.RadioButtonFor(m => m.SecretCode, "val")
+    <br />
+    <input id="Option" name="Option" type="radio" value="val" />
+
+    <br />
+    <h3>Html.TextBoxFor ----------------</h3>
+    @Html.TextBoxFor(m => m.Name)
+    <br />
+    <input id="Name" name="Name" type="text" />
+
+    <br />
+    <h3>Html.TextAreaFor ----------------</h3>
+    @Html.TextAreaFor(m => m.Name, 10, 9, null)
+    <br />
+    <textarea cols="9" id="Name" name="Name" rows="10"></textarea>
+
+    <h4>
+        Html.DropDownListFor <br />
+        Создает выпадающий список select с одиночным выбором для установки свойства модели
+    </h4>
+
+    <h4>
+        Html.ListBoxFor <br />
+        Создает список select со множественным выбором для определенного свойства модели. Подходит, если свойство модели представляет массив или список
+    </h4>
+
+
+}

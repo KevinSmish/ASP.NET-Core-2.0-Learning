@@ -1,0 +1,107 @@
+﻿@using Metanit_12_03_HtmlHelper_BeginForm.App_Code
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+<p>
+    <label>Модель</label><br />
+    @Html.TextBox("Name")
+</p>
+<p>
+    <label>Цена</label><br />
+    @Html.TextBox("Price","", new { type="number" })
+</p>
+<p>
+    <input type="submit" value="Отправить" />
+</p>
+
+<br />
+<h3>Label --------------------------------------------------</h3>
+@Html.Label("Name", "Модель из HtmlHelper")
+<br />
+<label for="Name">Модель из разметки</label>
+
+<br />
+<h3>TextArea --------------------------------------------------</h3>
+@Html.TextArea("text", "привет из HtmlHelper")
+<br />
+<textarea cols="20" id="text" name="text" rows="2">привет из разметки</textarea>
+
+<br />
+<h3>Hidden --------------------------------------------------</h3>
+@Html.Hidden("PhoneId", "2")
+<br />
+<input id="PhoneId" name="PhoneId" type="hidden" value="2" />
+
+<br />
+<h3>Password --------------------------------------------------</h3>
+@Html.Password("UserPassword", "val")
+<br />
+<input id="UserPassword" name="UserPassword" type="password" value="val" />
+
+
+<br />
+<h3>RadioButton --------------------------------------------------</h3>
+@Html.RadioButton("color", "red (from HtmlHelper)")
+<span>красный</span>  <br />
+@Html.RadioButton("color", "blue (from HtmlHelper)")
+<span>синий</span>  <br />
+@Html.RadioButton("color", "green (from HtmlHelper)", true)
+<span>зеленый</span>
+
+<br />
+<input id="color" name="color" type="radio" value="red" />
+<span>красный</span>  <br />
+<input id="color" name="color" type="radio" value="blue" />
+<span>синий</span>  <br />
+<input checked="checked" id="color" name="color" type="radio" value="green" />
+<span>зеленый</span>
+
+<br />
+<h3>CheckBox --------------------------------------------------</h3>
+@Html.CheckBox("Enable", false)
+<br />
+<input id="Enable" name="Enable" type="checkbox" value="true">
+<input name="Enable" type="hidden" value="false">
+
+<br />
+<h3>DropDownList --------------------------------------------------</h3>
+@Html.DropDownList("phone", new SelectList(new string[] { "iPhone 7 Pro", "Galaxy 7 Edge", "HTC 10", "Honor 5X" }), "Выберите модель (из HtmlHelper)")
+<br />
+<select id="phone" name="phone">
+    <option value="">Выберите модель (из Html)</option>
+    <option>iPhone 7 Pro</option>
+    <option>Galaxy 7 Edge</option>
+    <option>HTC 10</option>
+    <option>Honor 5X</option>
+</select>
+
+<br />
+<h3>SelectList (from HtmlHelper only) --------------------------------------------------</h3>
+<p>SelectList from HtmlHelper:</p>
+@Html.DropDownList("phoneid", ViewBag.Phones as SelectList)
+
+<br />
+<h3>MultiSelectList --------------------------------------------------</h3>
+@Html.ListBox("phones", new MultiSelectList(new string[] { "iPhone 7 Pro", "Galaxy 7 Edge", "HTC 10", "Honor 5X" }))
+<br />
+<select id="phones" multiple="multiple" name="phones">
+    <option>iPhone 7 Pro</option>
+    <option>Galaxy 7 Edge</option>
+    <option>HTC 10</option>
+    <option>Honor 5X</option>
+</select>
+
+}
+
+<h3>daytime select --------------------------------------------------</h3>
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+@Html.DropDownList("daytime", Html.GetEnumSelectList(typeof(TimeOfDay)))
+<br />
+<p>
+    <input type="submit" value="Отправить" />
+</p>
+}
+
+
+

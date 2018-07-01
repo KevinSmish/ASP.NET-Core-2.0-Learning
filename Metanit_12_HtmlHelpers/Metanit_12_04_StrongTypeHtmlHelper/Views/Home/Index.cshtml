@@ -1,0 +1,21 @@
+﻿@using Metanit_12_04_StrongTypeHtmlHelper.Models
+ 
+<h3>Смартфоны</h3>
+<table class="table-condensed">
+    <tr>
+        <td>Модель</td>
+        <td>Цена</td>
+        <td></td>
+    </tr>
+    @foreach (var phone in Model)
+    {
+        <tr>
+            <td>@phone.Name</td>
+            <td>@phone.Price</td>
+            <td><a href="~/Home/Buy/@phone.Id">Купить</a></td>
+        </tr>
+    }
+</table>
+
+<br />
+<a href="/Home/Create?Name=Nokia-3310&Price=1000"> Add Nokia-3310</a>

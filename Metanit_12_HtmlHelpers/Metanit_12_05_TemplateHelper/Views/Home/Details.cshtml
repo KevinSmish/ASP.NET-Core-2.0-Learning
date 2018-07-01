@@ -1,0 +1,10 @@
+﻿@model Metanit_12_05_TemplateHelper.Models.Phone
+
+@Html.DisplayForModel()
+
+<br />
+@Html.ActionLink("Добавить новую модель (from ActionLink)", "Create")
+<br />
+@Html.RouteLink("Добавить новую модель (from RouteLink)", "Default", new { action = "Create" })
+<br />
+<a href="/Home/Create">Добавить новую модель (from Html)</a>

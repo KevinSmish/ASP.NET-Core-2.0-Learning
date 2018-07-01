@@ -1,0 +1,16 @@
+﻿@model Metanit_12_05_TemplateHelper.Models.Phone
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(m => m.Name, "Модель")<br />
+        @Html.Editor("Name")
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Price, "Цена")<br />
+        @Html.EditorFor(m => m.Price)
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+}
