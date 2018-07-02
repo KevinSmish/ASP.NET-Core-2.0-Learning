@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<p>@Html.ActionLink("О сайте (из Html.ActionLink)", "About", "Home")</p>
+<p><a href='@Url.Action("About", "Home")'>О сайте (из Url.Action)</a></p>
+<p><a asp-controller="Home" asp-action="About">О сайте (из asp-action)</a></p>
+
+<h2>----------------------------</h2>
+<p><a asp-controller="Home" asp-action="Index" asp-route-id="5">Item5 (from asp-action)</a></p>
+<p><a href="http://localhost:1234/Home/Index/5">Item5 (from href)</a></p>
+
+<h2>----------------------------</h2>
+<p><a asp-controller="Home" asp-action="Index" asp-route-id="5" asp-route-age="18" asp-route-name="tom">Item5 (from asp-action, age=18,name=Tom)</a></p>
+<p><a href="http://localhost:1234/Home/Index/5?name=tom&age=18">Item5 (from href)</a></p>
+
+<h2>----------------------------</h2>
+<p><a asp-route="default">default (from asp-route)</a></p>
