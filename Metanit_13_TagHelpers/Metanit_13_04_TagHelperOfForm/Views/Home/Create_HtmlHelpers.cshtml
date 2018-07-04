@@ -1,0 +1,22 @@
+﻿@using Metanit_13_04_TagHelperOfForm.Models 
+
+@model Phone
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Price)
+        @Html.EditorFor(m => m.Price)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Company)
+        @Html.DropDownListFor(m => m.CompanyId, ViewBag.Companies as IEnumerable<SelectListItem>)
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}

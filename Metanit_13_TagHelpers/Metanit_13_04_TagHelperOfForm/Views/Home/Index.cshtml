@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Metanit_13_04_TagHelperOfForm.Models
+@model DayTimeViewModel
+
+<form method="post">
+    <div>
+        <div>
+            <label asp-for="Period">Время суток</label>
+            <select asp-for="Period" asp-items="Html.GetEnumSelectList<DayTime>()"></select>
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+</form>
+
+<h4>---</h4>
+<p>В качестве альтернативы можно создавать список с помощью конструктора SelectList:</p>
+<div>
+    <label asp-for="Period">Время суток</label>
+    <select asp-for="Period" asp-items="@new SelectList(Enum.GetNames(typeof(DayTime)))"></select>
+</div>
+
+<p><a asp-controller="Home" asp-action="Create">Create</a></p>
