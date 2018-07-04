@@ -24,10 +24,17 @@ namespace Metanit_13_05_ValidationTagHelper.Controllers
             return View();
         }
         [HttpPost]
-        public string Create(Phone phone)
+        public IActionResult Create(Phone phone)
         {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Companies = new SelectList(companies, "Id", "Name");
+                return View();
+            }
+
             Company company = companies.FirstOrDefault(c => c.Id == phone.CompanyId);
-            return $"Добавлен новый элемент: {phone.Name} ({company?.Name})";
+            ViewBag.Added = $"Добавлен новый элемент: {phone.Name} ({company?.Name})";
+            return View("Index");
         }
 
         public IActionResult Index()
