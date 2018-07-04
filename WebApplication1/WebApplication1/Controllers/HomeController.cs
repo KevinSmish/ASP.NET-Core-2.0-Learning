@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Metanit_13_05_ValidationTagHelper.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using WebApplication1.Models;
 
-namespace Metanit_13_05_ValidationTagHelper.Controllers
+namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,18 +18,6 @@ namespace Metanit_13_05_ValidationTagHelper.Controllers
             new Company { Id = 2, Name = "Samsung" },
             new Company { Id=3, Name="Microsoft" }
         };
-
-        public IActionResult Create()
-        {
-            ViewBag.Companies = new SelectList(companies, "Id", "Name");
-            return View();
-        }
-        [HttpPost]
-        public string Create(Phone phone)
-        {
-            Company company = companies.FirstOrDefault(c => c.Id == phone.CompanyId);
-            return $"Добавлен новый элемент: {phone.Name} ({company?.Name})";
-        }
 
         public IActionResult Index()
         {
@@ -41,6 +30,21 @@ namespace Metanit_13_05_ValidationTagHelper.Controllers
 
             return View();
         }
+
+        public IActionResult Create()
+        {
+            ViewBag.Companies = new SelectList(companies, "Id", "Name");
+            return View();
+        }
+
+        /*
+        [HttpPost]
+        public string Create(Phone phone)
+        {
+            Company company = companies.FirstOrDefault(c => c.Id == phone.CompanyId);
+            return $"Добавлен новый элемент: {phone.Name} ({company?.Name})";
+        }
+        */
 
         public IActionResult Contact()
         {

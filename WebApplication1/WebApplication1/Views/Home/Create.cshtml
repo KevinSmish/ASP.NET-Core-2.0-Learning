@@ -1,8 +1,10 @@
-﻿@model Metanit_13_05_ValidationTagHelper.Models.Phone
+﻿@using WebApplication1.Models
+@model WebApplication1.Models.Phone
+
 
 <form asp-antiforgery="true" asp-action="Create" asp-controller="Home">
     <div>
-        <div asp-validation-summary="All"></div>
+        <div class="validation" asp-validation-summary="All"></div>
         <div>
 
             <label asp-for="Name"></label><br />
