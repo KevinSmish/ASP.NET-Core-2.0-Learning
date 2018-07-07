@@ -17,6 +17,7 @@ namespace Metanit_14_01_Validation_Sample.Models
         дополнительные опции отображения.
         */
 
+        [PersonName(new string[] { "Tom", "Sam", "Alice", "Вася" }, ErrorMessage = "Имя не из списка - (Tom, Sam, Alice, Вася)")]
         [Required(ErrorMessage = "Не указано имя. Только не указывайте имя Вася ;)")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Длина строки должна быть от 3 до 50 символов")]
         public string Name { get; set; }
