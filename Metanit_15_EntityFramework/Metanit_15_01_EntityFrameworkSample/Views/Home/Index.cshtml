@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Metanit_15_01_EntityFrameworkSample.Models.Phone>
+
+@{
+    ViewBag.Title = "Все смартфоны";
+}
+<a asp-action="Create">Добавить модель</a>
+<table class="table">
+    <tr><td>Модель</td><td>Производитель</td><td>Цена</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Name</td><td>@item.Company</td><td>@item.Price</td></tr>
+    }
+</table>
+
+<br/>
+<a href="Home/Create">Create</a>
