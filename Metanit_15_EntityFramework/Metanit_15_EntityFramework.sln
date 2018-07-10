@@ -5,9 +5,13 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metanit_15_01_EntityFrameworkSample", "Metanit_15_01_EntityFrameworkSample\Metanit_15_01_EntityFrameworkSample.csproj", "{EBCDABE4-31AE-4CE2-AA58-63994040A71E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_15_04_EntityFrameworkSort", "Metanit_15_04_EntityFrameworkSort\Metanit_15_04_EntityFrameworkSort.csproj", "{C9BCDD38-07C1-40E5-B041-D9AFCF0A78EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metanit_15_04_EntityFrameworkSort", "Metanit_15_04_EntityFrameworkSort\Metanit_15_04_EntityFrameworkSort.csproj", "{C9BCDD38-07C1-40E5-B041-D9AFCF0A78EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_15_06_EntityFrameworkFilter", "Metanit_15_06_EntityFrameworkFilter\Metanit_15_06_EntityFrameworkFilter.csproj", "{ACB88894-073C-43EC-92C8-8B0B44905241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metanit_15_06_EntityFrameworkFilter", "Metanit_15_06_EntityFrameworkFilter\Metanit_15_06_EntityFrameworkFilter.csproj", "{ACB88894-073C-43EC-92C8-8B0B44905241}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_15_07_EntityFrameworkPager", "Metanit_15_07_EntityFrameworkPager\Metanit_15_07_EntityFrameworkPager.csproj", "{D0FE32DB-2413-4DD7-8A26-197D04A31A19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_15_08_EntityFrameworkTagHelperPager", "Metanit_15_08_EntityFrameworkTagHelperPager\Metanit_15_08_EntityFrameworkTagHelperPager.csproj", "{006E44A4-732D-46F4-81AE-B3A68D562E14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{ACB88894-073C-43EC-92C8-8B0B44905241}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACB88894-073C-43EC-92C8-8B0B44905241}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACB88894-073C-43EC-92C8-8B0B44905241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0FE32DB-2413-4DD7-8A26-197D04A31A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0FE32DB-2413-4DD7-8A26-197D04A31A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0FE32DB-2413-4DD7-8A26-197D04A31A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0FE32DB-2413-4DD7-8A26-197D04A31A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006E44A4-732D-46F4-81AE-B3A68D562E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006E44A4-732D-46F4-81AE-B3A68D562E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006E44A4-732D-46F4-81AE-B3A68D562E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006E44A4-732D-46F4-81AE-B3A68D562E14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

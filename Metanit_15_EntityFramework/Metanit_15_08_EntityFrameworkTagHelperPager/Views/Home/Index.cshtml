@@ -1,0 +1,20 @@
+﻿@using Metanit_15_08_EntityFrameworkTagHelperPager.Models
+
+@model IndexViewModel
+
+@*подключаем все tag-хелперы*@
+@addTagHelper "*, Metanit_15_08_EntityFrameworkTagHelperPager"
+
+@{
+    ViewData["Title"] = "Список пользователей";
+}
+
+<h1>Список пользователей</h1>
+<table class="table">
+    <tr><th>Имя</th><th>Возраст</th><th>Компания</th></tr>
+    @foreach (User u in Model.Users)
+    {
+        <tr><td>@u.Name</td><td>@u.Age</td><td>@u.Company.Name</td></tr>
+    }
+</table>
+<page-link page-model="Model.PageViewModel" page-action="Index"></page-link>
