@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_15_07_EntityFramewo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_15_08_EntityFrameworkTagHelperPager", "Metanit_15_08_EntityFrameworkTagHelperPager\Metanit_15_08_EntityFrameworkTagHelperPager.csproj", "{006E44A4-732D-46F4-81AE-B3A68D562E14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_15_09_EntityFramework_SortFilterPager", "Metanit_15_09_EntityFramework_SortFilterPager\Metanit_15_09_EntityFramework_SortFilterPager.csproj", "{B4DF2857-B30A-4DCB-AFDF-828C4D7B8E24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_15_10_EntityFramework_SortFilterPagerTagHelper", "Metanit_15_10_EntityFramework_SortFilterPagerTagHelper\Metanit_15_10_EntityFramework_SortFilterPagerTagHelper.csproj", "{E19F56D8-E5C8-457D-BCEC-0A92BB33D60A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{006E44A4-732D-46F4-81AE-B3A68D562E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{006E44A4-732D-46F4-81AE-B3A68D562E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{006E44A4-732D-46F4-81AE-B3A68D562E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4DF2857-B30A-4DCB-AFDF-828C4D7B8E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4DF2857-B30A-4DCB-AFDF-828C4D7B8E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4DF2857-B30A-4DCB-AFDF-828C4D7B8E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4DF2857-B30A-4DCB-AFDF-828C4D7B8E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E19F56D8-E5C8-457D-BCEC-0A92BB33D60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E19F56D8-E5C8-457D-BCEC-0A92BB33D60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E19F56D8-E5C8-457D-BCEC-0A92BB33D60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E19F56D8-E5C8-457D-BCEC-0A92BB33D60A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
