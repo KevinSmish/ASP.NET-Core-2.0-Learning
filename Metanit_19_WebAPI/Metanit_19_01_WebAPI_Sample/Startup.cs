@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 // https://localhost:44359/api/users
+// Invoke-RestMethod http://localhost:44359/api/users -Method GET
 
 namespace Metanit_19_01_WebAPI_Sample
 {
@@ -37,16 +38,8 @@ namespace Metanit_19_01_WebAPI_Sample
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }

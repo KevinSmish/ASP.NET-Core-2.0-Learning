@@ -13,7 +13,7 @@ namespace Metanit_19_01_WebAPI_Sample.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
                     Age = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

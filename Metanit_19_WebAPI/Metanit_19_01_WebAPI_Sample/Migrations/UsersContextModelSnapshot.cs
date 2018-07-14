@@ -26,7 +26,8 @@ namespace Metanit_19_01_WebAPI_Sample.Migrations
 
                     b.Property<int>("Age");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("Id");
 

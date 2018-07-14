@@ -49,9 +49,23 @@ namespace Metanit_19_01_WebAPI_Sample.Controllers
         {
             if (user == null)
             {
-                return BadRequest();
+                ModelState.AddModelError("", "Не указаны данные для пользователя");
+                return BadRequest(ModelState);
             }
 
+            // обработка частных случаев валидации
+            if (user.Age == 99)
+                ModelState.AddModelError("Age", "Возраст не должен быть равен 99");
+
+            if (user.Name == "admin")
+            {
+                ModelState.AddModelError("Name", "Недопустимое имя пользователя - admin");
+            }
+            // если есть лшибки - возвращаем ошибку 400
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            // если ошибок нет, сохраняем в базу данных
             db.Users.Add(user);
             db.SaveChanges();
             return Ok(user);

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Metanit_19_01_WebAPI_Sample.Migrations
 {
     [DbContext(typeof(UsersContext))]
-    [Migration("20180713173909_Initial")]
+    [Migration("20180714104808_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,8 @@ namespace Metanit_19_01_WebAPI_Sample.Migrations
 
                     b.Property<int>("Age");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
