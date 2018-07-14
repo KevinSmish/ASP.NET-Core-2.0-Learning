@@ -26,6 +26,7 @@ namespace Metanit_19_01_WebAPI_Sample.Controllers
 
         // GET: api/<controller>
         [HttpGet]
+        [FormatFilter]
         public IEnumerable<User> Get()
         {
             //return new string[] { "value1", "value2" };
