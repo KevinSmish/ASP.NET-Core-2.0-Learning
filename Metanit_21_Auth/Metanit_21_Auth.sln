@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metanit_21_01_CookiesAuth", "Metanit_21_01_CookiesAuth\Metanit_21_01_CookiesAuth.csproj", "{5AA8164A-4BAE-40FF-8D11-21820C216FED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AA8164A-4BAE-40FF-8D11-21820C216FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AA8164A-4BAE-40FF-8D11-21820C216FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AA8164A-4BAE-40FF-8D11-21820C216FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AA8164A-4BAE-40FF-8D11-21820C216FED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E242F09-1F19-4E2A-9516-9989987BBEF9}
+	EndGlobalSection
+EndGlobal
