@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Metanit_21_04_ClaimAuth.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -37,6 +38,8 @@ namespace Metanit_21_04_ClaimAuth
                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Register");
                });
 
+            services.AddTransient<IAuthorizationHandler, AgeHandler>();
+
             services.AddAuthorization(opts => {
                 opts.AddPolicy("OnlyForLondon", policy => {
                     policy.RequireClaim(ClaimTypes.Locality, "Лондон", "London");
@@ -44,6 +47,8 @@ namespace Metanit_21_04_ClaimAuth
                 opts.AddPolicy("OnlyForMicrosoft", policy => {
                     policy.RequireClaim("company", "Microsoft");
                 });
+                opts.AddPolicy("AgeLimit",
+                    policy => policy.Requirements.Add(new AgeRequirement(40)));
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

@@ -12,6 +12,7 @@ namespace Metanit_21_04_ClaimAuth.Controllers
     public class HomeController : Controller
     {
         [Authorize(Policy = "OnlyForLondon")]
+        [Authorize(Policy = "AgeLimit")]
         public IActionResult Index()
         {
             return View();
